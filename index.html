@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+    <html >
+        <head>
+<!---------------------------------------------------------------------------------------------------->
+        <base href="https://fned.000webhostapp.com/" />  <!-- we use it as a folder instead of this folder where this file sitiation (ep_15)  -->
+        <title>coding text</title>
+        <!-- icon -->
+        <link rel="icon" href="my_image.jpg" /> <!-- required  -->
+        <link rel="shortcut" href="my_image.jpg" /> <!-- for google when someone wants to search -->
+        <link rel="apple-touch-icon" href="my_image.jpg" /> <!-- for apple -->
+        <!---->
+
+        <!-- meta / google -->
+        <!-- <base href="https://fned.000webhostapp.com/" />  -->  <!-- we use it as a folder instead of this folder where this file sitiation (ep_15)  -->
+        <meta charset="UTF-8"> <!-- da3m ba9iyet a lou8at wl roumouz-->
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" > <!-- for all the phones -->
+        <meta name="description" content="here you can encode and decode everything you want"/>
+        <meta name="keywords" content="encode"/>
+        <meta name="author" content="youssef fned"/>
+        <!-- see input_file.html or ep43 -->
+        <!---->
+
+        <!-- website in facebook when you wanna share it in fcb -->
+        <meta property="og:title" content="coding text" />
+        <meta property="og:description" content="here you can encode and decode everything you want" />
+        <meta property="og:image" content="my_image.jpg" />
+        <meta property="og:image:width" content="1200" />  <!-- you should make the width=height*2 -->
+        <meta property="og:image:height" content="630"/> 
+        <meta property="og:type" content="website" /> <!-- content="article" -->
+        <!--   <meta property="og:url" content="" />  --> <!--it's not required or necessery -->
+        <!-- bloger: ep45 -->
+        <!---->
+
+        <!-- twitter -->
+        <meta name="twitter:card" content="summary_large_image"> <!-- required -->
+        <meta name="twitter:title" content="coding text">
+        <meta name="twitter:description" content="here you can encode and decode everything you want">
+        <meta name="twitter:image" content="my_image">
+
+        <meta name="twitter:site" content="@"> <!-- name of site account on twitter -->
+        <meta name="twitter:creator" content="@">  <!-- name of creator account on twitter -->
+        <!---->
+
+<!---------------------------------------------------------------------------------------------------->
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <style>
+            #app{
+                width: 100%;
+                max-width: 100%;
+            }
+            #app p{
+                width: 100%;
+                padding: 14px;
+                background: rgb(112, 91, 204);
+                color: white;
+                text-align: center;
+                font-family: sans-serif;
+                font-size: 22px;
+            }
+            #app textarea{
+                width: 100%;
+                border:2px solid rgb(138, 138, 138);
+                outline: none;
+                border-radius: 14px;
+                min-height: 140px;
+            }
+            #app select{
+                width: 100%;
+                padding: 14px;
+                border-radius: 14px;
+                margin-bottom: 14px;
+                
+            }
+            </style>
+    
+        </head>
+        <body dir="rtl">
+
+            <nav class="navbar navbar-light bg-light">
+                <a target="_blank" href="https://youtube.com/codershiyar" class="navbar-brand">Coder fned </a>
+                <a class="navbar-brand" href="#">
+                    <img src="my_image.jpg" style="object-fit: contain; border-radius: 30px; " width="60" height="60" class="d-inline-block align-top" alt="" loading="lazy">
+                    
+                  </a>
+              </nav>
+
+           
+           <main id="app">
+
+               <p>Text</p>
+               <select id="select">
+                   <option value="encode">encode text</option>
+                   <option value="decode">decode text</option>
+               </select>
+
+               <textarea id="text"></textarea>
+
+               <p> Result</p>
+               <textarea id="result">
+
+                </textarea>
+
+           </main> 
+
+           <div class="card">
+            <div style="text-align: center;" class="card-header">
+              about us
+            </div>
+            <div class="card-body" >
+              <blockquote class="blockquote mb-0">
+                <p style="text-align: center;">A site to decode a text with a system base64, or encode it with base 64 </p>
+            </blockquote>
+            </div>
+          </div>
+
+        <script>
+
+let textarea = document.getElementById("text");
+let result = document.getElementById("result");
+let select = document.getElementById("select");
+
+textarea.addEventListener("input",()=>{
+    make_result();
+});
+select.addEventListener("change",()=>{
+    make_result();
+});
+function make_result(){
+   if(select.value == "decode"){
+    result.value = window.atob(textarea.value) ;
+   }else{
+    result.value = window.btoa(textarea.value) ;
+   }
+}
+        </script>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        </body> 
+    </html>
